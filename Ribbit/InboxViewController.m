@@ -8,7 +8,6 @@
 
 #import "InboxViewController.h"
 #import "ImageViewController.h"
-
 @interface InboxViewController ()
 
 @end
@@ -17,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+
 	self.moviePlayer = [[MPMoviePlayerController alloc] init];
 	
 	PFUser *currentUser = [PFUser currentUser];
@@ -33,6 +34,7 @@
 
 - (void) viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
+	
 	PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
 	[query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
 	[query orderByDescending:@"createdAt"];

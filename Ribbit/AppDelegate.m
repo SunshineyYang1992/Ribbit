@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-
+#import <VungleSDK/VungleSDK.h>
 @interface AppDelegate ()
 
 @end
@@ -21,6 +21,12 @@
 	[Parse enableLocalDatastore];
 	[Parse setApplicationId:@"SY6IgFxGgcEqVwLv3rViSs2KnBOk173wGb6126ba"
 				  clientKey:@"9yvXL0iDOm7uVpMEEhBgZ5fovy7aabPUEWpCtlzs"];
+	
+	
+	NSString *appID = @"56f26802e2e0289e0b000125";
+	VungleSDK *sdk = [VungleSDK sharedSDK];
+	[sdk startWithAppId:appID];
+	
 	//[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 	return YES;
 }
